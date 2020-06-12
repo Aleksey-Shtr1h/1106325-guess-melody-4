@@ -1,6 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-// eslint-disable-next-line react/prop-types
 const WelcomeScreen = ({errorsCount}) => {
 
   return (
@@ -27,6 +27,10 @@ const WelcomeScreen = ({errorsCount}) => {
 
     </section>
   );
+};
+
+WelcomeScreen.propTypes = {
+  errorsCount: PropTypes.number.isRequired,
 };
 
 export default WelcomeScreen;
