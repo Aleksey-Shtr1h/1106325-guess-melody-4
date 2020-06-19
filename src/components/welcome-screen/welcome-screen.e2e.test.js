@@ -7,7 +7,7 @@ Enzyme.configure({
   adapter: new Adapter(),
 });
 
-test(`Should welcome button be pressed`, () => {
+it(`Should welcome button be pressed`, () => {
   const onWelcomeButtonClick = jest.fn();
 
   const welcomeScreen = shallow(
