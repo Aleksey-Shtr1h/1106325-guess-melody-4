@@ -10,7 +10,7 @@ const WelcomeScreen = ({errorsCount, onWelcomeButtonClick}) => {
         <img src="img/melody-logo.png" alt="Угадай мелодию" width="186" height="83"/>
       </div>
 
-      <button onClick = {onWelcomeButtonClick} className="welcome__button">
+      <button className="welcome__button" onClick = {onWelcomeButtonClick}>
         <span className="visually-hidden">Начать игру</span>
       </button>
 
