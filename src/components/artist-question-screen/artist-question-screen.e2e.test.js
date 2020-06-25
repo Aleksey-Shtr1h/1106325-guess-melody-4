@@ -1,8 +1,8 @@
-import React from "react";
-import {configure, shallow} from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
+import React from 'react';
+import {configure, shallow} from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 
-import ArtistQuestionScreen from "./artist-question-screen.jsx";
+import ArtistQuestionScreen from './artist-question-screen.jsx';
 
 configure({adapter: new Adapter()});
 
@@ -47,6 +47,7 @@ it(`Click on user answer should pass to the callback data-object from which this
   const screen = shallow(<ArtistQuestionScreen
     onAnswer={onAnswer}
     question={question}
+    renderPlayer={() => {}}
   />);
 
   const answerInputs = screen.find(`input`);
