@@ -6,7 +6,7 @@ import {connect} from 'react-redux';
 import {ActionCreator} from '../../redux/reducer-mistakes/reducer-mistakes.js';
 
 import WelcomeScreen from '../welcome-screen/welcome-screen.jsx';
-import {GameScreen} from '../game-screen/game-screen.jsx';
+import GameScreen from '../game-screen/game-screen.jsx';
 import ArtistQuestionScreen from '../artist-question-screen/artist-question-screen.jsx';
 import GenreQuestionScreen from '../genre-question-screen/genre-question-screen.jsx';
 import {GameType} from '../../const.js';
@@ -26,9 +26,20 @@ class App extends PureComponent {
       onUserAnswer,
       onWelcomeButtonClick,
       step,
+      mistakes,
+      resetGame,
     } = this.props;
 
     const question = questions[step];
+
+    if (mistakes >= 2) {
+      return (
+        <WelcomeScreen
+          onWelcomeButtonClick={resetGame}
+          errorsCount={maxMistakes}
+        />
+      );
+    }
 
     if (step === -1 || step >= questions.length) {
       return (
@@ -38,6 +49,7 @@ class App extends PureComponent {
         />
       );
     }
+
 
     if (question) {
       switch (question.type) {
@@ -95,6 +107,7 @@ const mapStateToProps = (state) => ({
   step: state.step,
   maxMistakes: state.maxMistakes,
   questions: state.questions,
+  mistakes: state.mistakes,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -105,6 +118,9 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(ActionCreator.incrementMistake(question, answer));
     dispatch(ActionCreator.incrementStep());
   },
+  resetGame() {
+    dispatch(ActionCreator.resetGame());
+  },
 });
 
 App.propTypes = {
@@ -113,6 +129,8 @@ App.propTypes = {
   onUserAnswer: PropTypes.func.isRequired,
   onWelcomeButtonClick: PropTypes.func.isRequired,
   step: PropTypes.number.isRequired,
+  resetGame: PropTypes.func.isRequired,
+  mistakes: PropTypes.number.isRequired,
 };
 
 export {App};

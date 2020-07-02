@@ -54,9 +54,11 @@ describe(`Render App`, () => {
           <Provider store={store}>
             <App
               maxMistakes={3}
+              mistakes={0}
               questions={questions}
               onUserAnswer={() => {}}
               onWelcomeButtonClick={() => {}}
+              resetGame={() => {}}
               step={-1}
             />
           </Provider>
@@ -75,9 +77,11 @@ describe(`Render App`, () => {
           <Provider store={store}>
             <App
               maxMistakes={3}
+              mistakes={1}
               questions={questions}
               onUserAnswer={() => {}}
               onWelcomeButtonClick={() => {}}
+              resetGame={() => {}}
               step={0}
             />
           </Provider>, {
@@ -99,9 +103,11 @@ describe(`Render App`, () => {
           <Provider store={store}>
             <App
               maxMistakes={3}
+              mistakes={1}
               questions={questions}
               onUserAnswer={() => {}}
               onWelcomeButtonClick={() => {}}
+              resetGame={() => {}}
               step={1}
             />
           </Provider>, {

@@ -6,7 +6,7 @@ import Mistakes from '../mistakes/mistakes.jsx';
 
 const GameScreen = (props) => {
   const {type, children, mistakes} = props;
-  // console.log(mistakes);
+
   return (
     <section className={`game game--${type}`}>
       <header className="game__header">
