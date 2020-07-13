@@ -73,9 +73,9 @@ export const reducerMistakes = (state = initialState, action) => {
 
     case ActionType.RESET:
 
-      return extend(state, {
+      return extend(initialState, {
         step: 0,
-        mistakes: 0,
+        // mistakes: 0,
       });
   }
 

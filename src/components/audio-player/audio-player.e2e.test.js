@@ -1,27 +1,19 @@
-import React from 'react';
-import {configure, mount} from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-
-import AudioPlayer from './audio-player.jsx';
+import React from "react";
+import {configure, shallow} from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
+import AudioPlayer from "./audio-player.jsx";
 
 configure({adapter: new Adapter()});
 
-const songSrc = `https://upload.wikimedia.org/wikipedia/commons/1/1f/Uganda_flag_and_national_anthem_-_Oh_Uganda_Land_o.ogg`;
-
-it(`AudioPlayer is rendered correctly`, () => {
-
-  const onButtonClick = jest.fn();
-
-  const screen = mount(<AudioPlayer
+it(`Click by Play button calls callback`, () => {
+  const handlePlayButtonClick = jest.fn();
+  const wrapper = shallow(<AudioPlayer
+    isLoading={false}
     isPlaying={false}
-    onPlayButtonClick={onButtonClick}
-    src={songSrc}
-  />);
+    onPlayButtonClick={handlePlayButtonClick}>
+    <audio />
+  </AudioPlayer>);
 
-  const buttonTrack = screen.find(`.track__button`);
-  buttonTrack.simulate(`click`, onButtonClick);
-
-  expect(buttonTrack.hasClass(`track__button--pause`)).toBe(false);
-  expect(buttonTrack.hasClass(`track__button--play`)).toBe(true);
-
+  wrapper.find(`.track__button`).simulate(`click`);
+  expect(handlePlayButtonClick).toHaveBeenCalledTimes(1);
 });
