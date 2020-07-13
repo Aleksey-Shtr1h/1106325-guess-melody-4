@@ -33,16 +33,18 @@ it(`Checks that HOC's callback turn on audio (play)`, () => {
   />);
 
   window.HTMLMediaElement.prototype.play = () => {};
+  window.HTMLMediaElement.prototype.pause = () => {};
 
   const {_audioRef} = wrapper.instance();
-
   jest.spyOn(_audioRef.current, `play`);
 
-  wrapper.instance().componentDidMount();
+  jest.spyOn(_audioRef.current, `pause`);
 
+  wrapper.instance().componentDidMount();
   wrapper.find(`button`).simulate(`click`);
 
-  expect(_audioRef.current.play).toHaveBeenCalledTimes(1);
+  expect(_audioRef.current.play).toHaveBeenCalledTimes(0);
+  expect(_audioRef.current.pause).toHaveBeenCalledTimes(1);
 });
 
 it(`Checks that HOC's callback turn off audio (pause)`, () => {
@@ -54,14 +56,17 @@ it(`Checks that HOC's callback turn off audio (pause)`, () => {
   />);
 
   window.HTMLMediaElement.prototype.pause = () => {};
+  window.HTMLMediaElement.prototype.play = () => {};
 
   const {_audioRef} = wrapper.instance();
 
   jest.spyOn(_audioRef.current, `pause`);
 
-  wrapper.instance().componentDidMount();
+  jest.spyOn(_audioRef.current, `play`);
 
+  wrapper.instance().componentDidMount();
   wrapper.find(`button`).simulate(`click`);
 
-  expect(_audioRef.current.pause).toHaveBeenCalledTimes(1);
+  expect(_audioRef.current.play).toHaveBeenCalledTimes(1);
+  expect(_audioRef.current.pause).toHaveBeenCalledTimes(0);
 });
