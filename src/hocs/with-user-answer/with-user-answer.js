@@ -10,7 +10,6 @@ const withUserAnswer = (Component) => {
       super(props);
 
       this.state = {
-        // answers: [false, false, false, false],
         answers: new Array(props.question.answers.length).fill(false),
       };
 

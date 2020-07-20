@@ -7,18 +7,9 @@ import GenreQuestionItem from '../genre-question-item/genre-question-item.jsx';
 
 class GenreQuestionScreen extends PureComponent {
 
-  // constructor(props) {
-  //   super(props);
-
-  //   this.state = {
-  //     activePlayer: 0,
-  //     answers: [false, false, false, false],
-  //   };
-  // }
-
   render() {
     const {onAnswer, onChange, question, renderPlayer, userAnswers} = this.props;
-    // const {answers: userAnswers} = this.state;
+
     const {answers, genre} = question;
 
     return (
@@ -41,36 +32,6 @@ class GenreQuestionScreen extends PureComponent {
               renderPlayer={renderPlayer}
               userAnswer={userAnswers[i]}
             />
-            // <div className="track" key = {`${i}-${answer.src}`}>
-
-            //   {renderPlayer(answer.src, i)}
-
-            //   <div className="game__answer">
-
-            //     <input
-            //       className="game__input visually-hidden"
-            //       type="checkbox"
-            //       name="answer"
-            //       value = {`answer-${i}`}
-            //       id = {`answer-${i}`}
-            //       checked = {userAnswers[i]}
-
-            //       onChange = {(evt) => {
-            //         const value = evt.target.checked;
-
-            //         this.setState({
-            //           answers: [...userAnswers.slice(0, i), value, ...userAnswers.slice(i + 1)],
-            //         });
-            //       }}
-            //     />
-
-            //     <label className="game__check" htmlFor = {`answer-${i}`}>
-            //       Отметить
-            //     </label>
-
-            //   </div>
-            // </div>
-
           ))}
 
           <button
