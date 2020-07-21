@@ -2,160 +2,167 @@
 
 exports[`Render App Render ArtistQuestionScreen 1`] = `
 <section
-  className="game game--artist"
+  className="login"
 >
-  <header
-    className="game__header"
+  <div
+    className="login__logo"
   >
-    <a
-      className="game__back"
-      href="#"
+    <img
+      alt="Угадай мелодию"
+      height="83"
+      src="img/melody-logo.png"
+      width="186"
+    />
+  </div>
+  <h2
+    className="login__title"
+  >
+    Вы настоящий меломан!
+  </h2>
+  <p
+    className="login__text"
+  >
+    Хотите узнать свой результат? Представтесь!
+  </p>
+  <form
+    action=""
+    className="login__form"
+    onSubmit={[Function]}
+  >
+    <p
+      className="login__field"
     >
+      <label
+        className="login__label"
+        htmlFor="name"
+      >
+        Логин
+      </label>
+      <input
+        className="login__input"
+        id="name"
+        name="name"
+        type="text"
+      />
+    </p>
+    <p
+      className="login__field"
+    >
+      <label
+        className="login__label"
+        htmlFor="password"
+      >
+        Пароль
+      </label>
+      <input
+        className="login__input"
+        id="password"
+        name="password"
+        type="text"
+      />
       <span
-        className="visually-hidden"
+        className="login__error"
       >
-        Сыграть ещё раз
+        Неверный пароль
       </span>
-      <img
-        alt="Угадай мелодию"
-        className="game__logo"
-        src="img/melody-logo-ginger.png"
-      />
-    </a>
-    <svg
-      className="timer"
-      viewBox="0 0 780 780"
-      xmlns="http://www.w3.org/2000/svg"
+    </p>
+    <button
+      className="login__button button"
+      type="submit"
     >
-      <circle
-        className="timer__line"
-        cx="390"
-        cy="390"
-        r="370"
-        style={
-          Object {
-            "filter": "url(#blur)",
-            "transform": "rotate(-90deg) scaleY(-1)",
-            "transformOrigin": "center",
-          }
-        }
-      />
-    </svg>
-    <div
-      className="game__mistakes"
-    >
-      <div
-        className="wrong"
-      />
-      <div
-        className="wrong"
-      />
-      <div
-        className="wrong"
-      />
-    </div>
-  </header>
-  <section
-    className="game__screen"
+      Войти
+    </button>
+  </form>
+  <button
+    className="replay"
+    onClick={[Function]}
+    type="button"
   >
-    <h2
-      className="game__title"
+    Сыграть ещё раз
+  </button>
+</section>
+`;
+
+exports[`Render App Render AuthScreen 1`] = `
+<section
+  className="login"
+>
+  <div
+    className="login__logo"
+  >
+    <img
+      alt="Угадай мелодию"
+      height="83"
+      src="img/melody-logo.png"
+      width="186"
+    />
+  </div>
+  <h2
+    className="login__title"
+  >
+    Вы настоящий меломан!
+  </h2>
+  <p
+    className="login__text"
+  >
+    Хотите узнать свой результат? Представтесь!
+  </p>
+  <form
+    action=""
+    className="login__form"
+    onSubmit={[Function]}
+  >
+    <p
+      className="login__field"
     >
-      Кто исполняет эту песню?
-    </h2>
-    <div
-      className="game__track"
+      <label
+        className="login__label"
+        htmlFor="name"
+      >
+        Логин
+      </label>
+      <input
+        className="login__input"
+        id="name"
+        name="name"
+        type="text"
+      />
+    </p>
+    <p
+      className="login__field"
     >
-      <div
-        className="track"
+      <label
+        className="login__label"
+        htmlFor="password"
       >
-        <button
-          className="track__button track__button--pause"
-          disabled={true}
-          onClick={[Function]}
-          type="button"
-        />
-        <div
-          className="track__status"
-        >
-          <audio />
-        </div>
-      </div>
-    </div>
-    <form
-      className="game__artist"
+        Пароль
+      </label>
+      <input
+        className="login__input"
+        id="password"
+        name="password"
+        type="text"
+      />
+      <span
+        className="login__error"
+      >
+        Неверный пароль
+      </span>
+    </p>
+    <button
+      className="login__button button"
+      type="submit"
     >
-      <div
-        className="artist"
-      >
-        <input
-          className="artist__input visually-hidden"
-          id="answer-0"
-          name="answer"
-          onChange={[Function]}
-          type="radio"
-          value="answer-0"
-        />
-        <label
-          className="artist__name"
-          htmlFor="answer-0"
-        >
-          <img
-            alt="John Snow"
-            className="artist__picture"
-            src="https://api.adorable.io/avatars/128"
-          />
-          John Snow
-        </label>
-      </div>
-      <div
-        className="artist"
-      >
-        <input
-          className="artist__input visually-hidden"
-          id="answer-1"
-          name="answer"
-          onChange={[Function]}
-          type="radio"
-          value="answer-1"
-        />
-        <label
-          className="artist__name"
-          htmlFor="answer-1"
-        >
-          <img
-            alt="Jack Daniels"
-            className="artist__picture"
-            src="https://api.adorable.io/avatars/128"
-          />
-          Jack Daniels
-        </label>
-      </div>
-      <div
-        className="artist"
-      >
-        <input
-          className="artist__input visually-hidden"
-          id="answer-2"
-          name="answer"
-          onChange={[Function]}
-          type="radio"
-          value="answer-2"
-        />
-        <label
-          className="artist__name"
-          htmlFor="answer-2"
-        >
-          <img
-            alt="Jim Beam"
-            className="artist__picture"
-            src="https://api.adorable.io/avatars/128"
-          />
-          Jim Beam
-        </label>
-      </div>
-    </form>
-  </section>
+      Войти
+    </button>
+  </form>
+  <button
+    className="replay"
+    onClick={[Function]}
+    type="button"
+  >
+    Сыграть ещё раз
+  </button>
 </section>
 `;
 
@@ -195,217 +202,84 @@ exports[`Render App Render GameOverScreen 1`] = `
 
 exports[`Render App Render GenreQuestionScreen 1`] = `
 <section
-  className="game game--genre"
+  className="login"
 >
-  <header
-    className="game__header"
+  <div
+    className="login__logo"
   >
-    <a
-      className="game__back"
-      href="#"
+    <img
+      alt="Угадай мелодию"
+      height="83"
+      src="img/melody-logo.png"
+      width="186"
+    />
+  </div>
+  <h2
+    className="login__title"
+  >
+    Вы настоящий меломан!
+  </h2>
+  <p
+    className="login__text"
+  >
+    Хотите узнать свой результат? Представтесь!
+  </p>
+  <form
+    action=""
+    className="login__form"
+    onSubmit={[Function]}
+  >
+    <p
+      className="login__field"
     >
+      <label
+        className="login__label"
+        htmlFor="name"
+      >
+        Логин
+      </label>
+      <input
+        className="login__input"
+        id="name"
+        name="name"
+        type="text"
+      />
+    </p>
+    <p
+      className="login__field"
+    >
+      <label
+        className="login__label"
+        htmlFor="password"
+      >
+        Пароль
+      </label>
+      <input
+        className="login__input"
+        id="password"
+        name="password"
+        type="text"
+      />
       <span
-        className="visually-hidden"
+        className="login__error"
       >
-        Сыграть ещё раз
+        Неверный пароль
       </span>
-      <img
-        alt="Угадай мелодию"
-        className="game__logo"
-        src="img/melody-logo-ginger.png"
-      />
-    </a>
-    <svg
-      className="timer"
-      viewBox="0 0 780 780"
-      xmlns="http://www.w3.org/2000/svg"
+    </p>
+    <button
+      className="login__button button"
+      type="submit"
     >
-      <circle
-        className="timer__line"
-        cx="390"
-        cy="390"
-        r="370"
-        style={
-          Object {
-            "filter": "url(#blur)",
-            "transform": "rotate(-90deg) scaleY(-1)",
-            "transformOrigin": "center",
-          }
-        }
-      />
-    </svg>
-    <div
-      className="game__mistakes"
-    >
-      <div
-        className="wrong"
-      />
-      <div
-        className="wrong"
-      />
-      <div
-        className="wrong"
-      />
-    </div>
-  </header>
-  <section
-    className="game__screen"
+      Войти
+    </button>
+  </form>
+  <button
+    className="replay"
+    onClick={[Function]}
+    type="button"
   >
-    <h2
-      className="game__title"
-    >
-      Выберите 
-      rock
-       треки
-    </h2>
-    <form
-      className="game__tracks"
-      onSubmit={[Function]}
-    >
-      <div
-        className="track"
-      >
-        <button
-          className="track__button track__button--pause"
-          disabled={true}
-          onClick={[Function]}
-          type="button"
-        />
-        <div
-          className="track__status"
-        >
-          <audio />
-        </div>
-        <div
-          className="game__answer"
-        >
-          <input
-            checked={false}
-            className="game__input visually-hidden"
-            id="answer-0"
-            name="answer"
-            onChange={[Function]}
-            type="checkbox"
-            value="answer-0"
-          />
-          <label
-            className="game__check"
-            htmlFor="answer-0"
-          >
-            Отметить
-          </label>
-        </div>
-      </div>
-      <div
-        className="track"
-      >
-        <button
-          className="track__button track__button--play"
-          disabled={true}
-          onClick={[Function]}
-          type="button"
-        />
-        <div
-          className="track__status"
-        >
-          <audio />
-        </div>
-        <div
-          className="game__answer"
-        >
-          <input
-            checked={false}
-            className="game__input visually-hidden"
-            id="answer-1"
-            name="answer"
-            onChange={[Function]}
-            type="checkbox"
-            value="answer-1"
-          />
-          <label
-            className="game__check"
-            htmlFor="answer-1"
-          >
-            Отметить
-          </label>
-        </div>
-      </div>
-      <div
-        className="track"
-      >
-        <button
-          className="track__button track__button--play"
-          disabled={true}
-          onClick={[Function]}
-          type="button"
-        />
-        <div
-          className="track__status"
-        >
-          <audio />
-        </div>
-        <div
-          className="game__answer"
-        >
-          <input
-            checked={false}
-            className="game__input visually-hidden"
-            id="answer-2"
-            name="answer"
-            onChange={[Function]}
-            type="checkbox"
-            value="answer-2"
-          />
-          <label
-            className="game__check"
-            htmlFor="answer-2"
-          >
-            Отметить
-          </label>
-        </div>
-      </div>
-      <div
-        className="track"
-      >
-        <button
-          className="track__button track__button--play"
-          disabled={true}
-          onClick={[Function]}
-          type="button"
-        />
-        <div
-          className="track__status"
-        >
-          <audio />
-        </div>
-        <div
-          className="game__answer"
-        >
-          <input
-            checked={false}
-            className="game__input visually-hidden"
-            id="answer-3"
-            name="answer"
-            onChange={[Function]}
-            type="checkbox"
-            value="answer-3"
-          />
-          <label
-            className="game__check"
-            htmlFor="answer-3"
-          >
-            Отметить
-          </label>
-        </div>
-      </div>
-      <button
-        className="game__submit button"
-        type="submit"
-      >
-        Ответить
-      </button>
-    </form>
-  </section>
+    Сыграть ещё раз
+  </button>
 </section>
 `;
 

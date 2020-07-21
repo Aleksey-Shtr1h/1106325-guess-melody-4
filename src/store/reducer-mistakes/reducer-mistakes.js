@@ -75,7 +75,6 @@ export const reducerMistakes = (state = initialState, action) => {
 
       return extend(initialState, {
         step: 0,
-        // mistakes: 0,
       });
   }
 
