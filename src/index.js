@@ -20,11 +20,9 @@ const api = createAPI(onUnauthorized);
 
 const store = createStore(
     rootReducer,
-    // compose(
     composeWithDevTools(applyMiddleware(
         thunk.withExtraArgument(api))
     )
-    // )
 );
 
 store.dispatch(DataOperation.loadQuestions());

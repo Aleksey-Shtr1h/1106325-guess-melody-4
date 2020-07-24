@@ -18,7 +18,6 @@ class GenreQuestionScreen extends PureComponent {
         <form className="game__tracks"
           onSubmit={(evt) => {
             evt.preventDefault();
-            // onAnswer(question, this.state.answers);
             onAnswer();
           }}
         >
