@@ -8,6 +8,7 @@ const initialState = {
 };
 
 export const ActionType = {
+  GO_TO_WELCOME: `GO_TO_WELCOME`,
   INCREMENT_MISTAKES: `INCREMENT_MISTAKES`,
   INCREMENT_STEP: `INCREMENT_STEP`,
   RESET: `RESET`,
@@ -53,6 +54,13 @@ export const ActionCreator = {
       payload: null,
     };
   },
+
+  goToWelcome: () => {
+    return {
+      type: ActionType.GO_TO_WELCOME,
+      payload: null,
+    };
+  },
 };
 
 export const reducerGame = (state = initialState, action) => {
@@ -73,6 +81,11 @@ export const reducerGame = (state = initialState, action) => {
 
       return extend(initialState, {
         step: 0,
+      });
+
+    case ActionType.GO_TO_WELCOME:
+      return extend(initialState, {
+        step: -1,
       });
   }
 
